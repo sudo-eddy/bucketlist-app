@@ -9,8 +9,7 @@ router.get('/',(req,res) => {
   bucketlist.getAllLists((err,lists) => {
 //err always goes first
     if(err) {
-      res.json({success:false, message: `Failed to load all lists. Error:
-        ${err}`});
+      res.json({success:false, message: `Failed to load all lists. Error: ${err}`});
     }
     else {
       res.write(JSON.stringify({success: true, lists:lists},null,2));
@@ -28,8 +27,7 @@ router.post('/',(req,res,next) => {
   });
   bucketlist.addList(newList,(err, list) => {
     if(err) {
-      res.json({success: false, message: `Failed to create a new list. Error:
-        ${err}`});
+      res.json({success: false, message: `Failed to create a new list. Error: ${err}`});
     }
     else
       res.json({success:true, message: "Added successfully."});
@@ -37,15 +35,15 @@ router.post('/',(req,res,next) => {
 });
 
 //DELETE HTTP method to /bucketlist
-//Pass object if ('/:id') as params
+//Pass object id ('/:id') as params
 router.delete('/:id',(req,res,next) => {
 //access the parameter which is the id of the item to be deleted
   let id = req.params.id;
+  console.log(id);
 //Call the model method deleteListById
   buketlist.deleteListById(id,(err,list) => {
     if(err) {
-      res.json({suess:false, message: `Failed to delete the list. Error:
-        ${err}`});
+      res.json({suess:false, message: `Failed to delete the list. Error: ${err}`});
     }
     else if(list) {
       res.json({success:true, message: "Deleted successfully"});

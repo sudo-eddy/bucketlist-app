@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
-const bucketlist = require('./controller/bucketlist');
+const bucketlist = require('./controllers/bucketlist');
 
 //Connect mongoose to database
 mongoose.connect(config.database);

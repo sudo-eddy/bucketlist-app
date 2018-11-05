@@ -12,6 +12,17 @@
     "express": "^4.16.4",
     "mongoose": "~4.11.0"
   },
+
+  "keywords": [
+    "MEAN",
+    "stack",
+    "Express.js",
+    "MongoDB",
+    "Angular",
+    "MEAN"
+  ],
+
+  
   "author": "",
   "license": "ISC"
 }
